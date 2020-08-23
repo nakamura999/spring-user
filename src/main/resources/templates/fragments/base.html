@@ -2,12 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<th:block th:frag>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>管理</title>
-	<link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.min.css}">
-	<link rel="stylesheet" th:href="@{/webjars/startbootstrap-sb-admin-2/css/sb-admin-2.min.css}">
-	<link rel="stylesheet" th:href="@{/css/app.css}">
+	<th:block th:fragment="header">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>管理</title>
+		<link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.min.css}">
+		<link rel="stylesheet" th:href="@{/webjars/startbootstrap-sb-admin-2/css/sb-admin-2.min.css}">
+		<link rel="stylesheet" th:href="@{/css/app.css}">
+	</th:block>
 </head>
 <body>
 	<th:block th:fragment="scripts">

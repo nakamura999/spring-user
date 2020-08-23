@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<th:block th:insert="fragments/base :: header"></th:block>
 </head>
-<body class="bg-gradient-primary">
+<body class="bg-gradient-warning">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-xl-10 col-lg-12 col-md-9">
@@ -15,7 +15,7 @@
 							<div class="col-lg-6">
 								<div class="p-5">
 									<div class="text-center">
-										<h1 class="h4 text-gray-900 mb-4">ログインpg</h1>
+										<h1 class="h4 text-gray-900 mb-4">ログイン</h1>
 									</div>
 									<div class="alert alert-danger" th:if="${param.error}">
 										<small>ユーザー名またはパスワードが正しくありません</small>
@@ -41,7 +41,7 @@
 												</label>
 											</div>	
 										</div>
-										<button class="btn btn-primary btn-user bth-block">ログイン</button>
+										<button class="btn btn-warning btn-user bth-block border-secondary">ログイン</button>
 									</form>
 									<hr>
 									<!-- <div class="text-center"> -->

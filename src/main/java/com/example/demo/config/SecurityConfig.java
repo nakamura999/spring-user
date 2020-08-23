@@ -55,11 +55,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			// ユーザー名 admin or user
 			// パスワード両方ともpassword
 			.withUser("admin")
-				.password(passwordEncoder().encode("password"))
+				.password(passwordEncoder().encode("12345678"))
 				.authorities("ROLE_ADMIN")
 				.and()
 			.withUser("user")
-				.password(passwordEncoder().encode("password"))
+				.password(passwordEncoder().encode("12345678"))
 				.authorities("ROLE_USER");
 	}
 }
