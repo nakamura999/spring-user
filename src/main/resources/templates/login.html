@@ -17,6 +17,8 @@
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-4">ログイン</h1>
 									</div>
+
+									<!-- アラートメッセージ -->
 									<div class="alert alert-danger" th:if="${param.error}">
 										<small>ユーザー名またはパスワードが正しくありません</small>
 									</div>
@@ -26,6 +28,7 @@
 									<div class="alert alert-success" th:if="${param.logout}">
 										<small>ログアウトしました</small>
 									</div>
+
 									<form th:action="@{/login}" class="user" method="post">
 										<div class="form-group">
 											<input type="text" class="form-control form-control-user" name="username" placeholder="ユーザー名">
