@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<th:block th:frag>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>管理</title>
+	<link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.min.css}">
+	<link rel="stylesheet" th:href="@{/webjars/startbootstrap-sb-admin-2/css/sb-admin-2.min.css}">
+	<link rel="stylesheet" th:href="@{/css/app.css}">
 </head>
 <body>
-
+	<th:block th:fragment="scripts">
+		<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+		<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+		<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+		<script th:src="@{/webjars/startbootstrap-sb-admin-2/js/sb-admin-2.min.js}"></script>
+		<script th:src="@{/webjars/chartjs/Chart.min.js}"></script>
+	<th:block>
 </body>
 </html>
