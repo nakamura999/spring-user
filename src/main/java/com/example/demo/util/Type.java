@@ -14,5 +14,4 @@ public class Type {
 		genders.put(3, "その他");
 		GENDERS = Collections.unmodifiableMap(genders);
 	}
-
 }
