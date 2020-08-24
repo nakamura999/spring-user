@@ -63,6 +63,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService)
 			.passwordEncoder(passwordEncoder());
+		// ↑userDetailsServiceを使用したDB認証
+		// ↓メモリ認証
 //		auth.inMemoryAuthentication()
 //			 ユーザー名 admin or user
 //			 パスワード両方ともpassword
