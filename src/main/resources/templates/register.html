@@ -44,8 +44,8 @@
 											<label for="email">性別</label>
 											<div th:each="gender:${T(com.example.demo.util.Type).GENDERS}">
 											<!-- Typeクラスの性別フィールドを呼び出す -->
-												<input type="radio" class="ml-2" th:field="*{gender}" th:value="${grnder.key}">
-												<label th:for="${ids.prev('gender')}" th:text="${gender.value}"></label>
+												<input type="radio" class="ml-2" th:field="*{gender}" th:value="${gender.key}">
+												<label th:for="${#ids.prev('gender')}" th:text="${gender.value}"></label>
 											</div>
 										</div>
 										<div class="form-cheak mb-2">

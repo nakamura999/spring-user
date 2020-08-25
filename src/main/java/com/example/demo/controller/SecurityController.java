@@ -24,7 +24,7 @@ public class SecurityController {
 	private final BCryptPasswordEncoder passwordEncoder;
 
 	@GetMapping("/login")
-	public String Login() {
+	public String login() {
 		return "login";
 	}
 	
