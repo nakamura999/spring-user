@@ -2,18 +2,14 @@
 
 .bg-login-image{
 	background: url(/images/photo1.jpg);
-/* 	background-image: url(/image/photo1.jpg); */
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
-/* 	height: 100px;
-	weight: 100px; */
 }
 
-.main-image{
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	height: 300px;
-	width: 300px;
+.main-text {
+	background-color: #1cc88a;
+	border-radius: 10rem;
+	padding: 5px;
+	border: 1px solid gray;
 }
