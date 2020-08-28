@@ -19,5 +19,5 @@
 http://localhost:8080/
 ターミナル: ./mvnw spring-boot:run
 
-![main](img/image1.png)
+![main](img/image2.png)
 ==============================
