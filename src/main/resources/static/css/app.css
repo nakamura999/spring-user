@@ -13,3 +13,11 @@
 	padding: 5px;
 	border: 1px solid gray;
 }
+
+.body-image {
+	background: url(/images/photo3.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+}
