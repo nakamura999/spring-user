@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		// セキュリティ設定を無視(ignoring)するパスを指定
 		// css・js・imgなどの静的ソースを指定
-		web.ignoring().antMatchers("/js/**", "/css/**", "/webjars/**");
+		web.ignoring().antMatchers("/js/**", "/css/**", "/webjars/**", "/images/**");
 	}
 	
 	@Override

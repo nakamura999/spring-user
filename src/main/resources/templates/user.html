@@ -22,12 +22,21 @@
 										<tr>
 											<th>ログインユーザー名</th>
 											<th>ユーザー権限</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td th:text="${username}"></td>
 											<td th:text="${role}"></td>
+											<td>
+												<a th:href="@{/edit/{id}(id=*{id})}" class="btn btn-warning btn-icon-split">
+													<span class="icon text-white-50">
+														<i class="fas fa-exchange-alt"></i>
+													</span>
+													<span class="text">編集</span>
+												</a>
+											</td>
 										</tr>
 									</tbody>
 								</table>

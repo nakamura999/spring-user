@@ -8,7 +8,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.SiteUser;
 import com.example.demo.repository.SiteUserRepository;
@@ -33,6 +35,7 @@ public class SecurityController {
 		// Authentication 認証済みのユーザー情報を取得する
 		model.addAttribute("username", loginUser.getName());
 		model.addAttribute("role", loginUser.getAuthorities());
+//		model.addAttribute("id", loginUser.);
 		return "user";
 	}
 	
@@ -61,6 +64,18 @@ public class SecurityController {
 		userRepository.save(user);
 		
 		return "redirect:/login?register";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String edituser(@PathVariable Long id, Model model) {
+		model.addAttribute("user", userRepository.findById(id));
+		return "edituser";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String deleteSiteUser(@PathVariable Long id) {
+		userRepository.deleteById(id);
+		return "redirect:/";
 	}
 
 }
