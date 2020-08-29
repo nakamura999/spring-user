@@ -21,3 +21,11 @@
 	background-size: cover;
 	width: 100%;
 }
+
+.side-visual {
+	background: url(/images/photo3.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+}
