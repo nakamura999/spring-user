@@ -12,8 +12,8 @@
 			<div id="content">
 				<div class="container-fluid">
 					<div class="card shadow my-4">
-						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold text-primary">ログイン情報</h6>
+						<div class="card-header visual-box py-3">
+							<h6 class="m-0 font-weight-bold text-white">LoginUser</h6>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
@@ -30,12 +30,12 @@
 											<td th:text="${username}"></td>
 											<td th:text="${role}"></td>
 											<td>
-												<a th:href="@{/edit/{id}(id=*{id})}" class="btn btn-warning btn-icon-split">
+<!-- 												<a th:href="@{/edit/{id}(id=*{id})}" class="btn btn-warning btn-icon-split">
 													<span class="icon text-white-50">
 														<i class="fas fa-exchange-alt"></i>
 													</span>
 													<span class="text">編集</span>
-												</a>
+												</a> -->
 											</td>
 										</tr>
 									</tbody>
