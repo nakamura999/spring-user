@@ -4,10 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import javax.persistence.OneToMany;
+
+import org.hibernate.validator.constraints.Range;
+//import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,26 +17,23 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class SiteUser {
+public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Size(min = 2, max=20)
-	private String username;
-	
-	@Size(min = 4, max = 255)
-	private String password;
-	
 	@NotBlank
-	@Email
-	private String email;
+	@Size(max = 40)
+	private String name;
 	
-	private int gender;
-	private boolean admin;
-	private String role;
-	private boolean active = true;
+	@Range(max = 500000)
+	private Long price;
 	
-	@OneToMany(mappedBy = "siteuser")
-	private Product products;
+	public String setPriceEn() {
+		return price + "円";
+	}
+	
+	@ManyToOne
+	private SiteUser siteuser;
+
 }
