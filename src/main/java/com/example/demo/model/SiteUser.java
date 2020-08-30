@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,5 +38,5 @@ public class SiteUser {
 	private boolean active = true;
 	
 	@OneToMany(mappedBy = "siteuser")
-	private Product products;
+	private List<Product> products;
 }
