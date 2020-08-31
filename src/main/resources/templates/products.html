@@ -7,6 +7,62 @@
 <body id="page-top">
 	<div id="wrapper">
 		<th:block th:insert="fragments/sidebar :: sidebar"></th:block>
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="content">
+				<div class="container-fluid">
+					<div class="card shadow text-white bg-info border-dark my-4">
+						<div class="card-header side-visual py-3">
+							<h6 class="m-0 font-weight-bold text-white">
+								<i class="fas fa-boxes"></i> 商品一覧
+							</h6>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<div th:if="${products.size() == 0}">
+									商品を登録してください
+								</div>
+								<table class="table table-bordered text-white" th:if="${products.size() > 0}">
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>商品名</th>
+											<th>ジャンル</th>
+											<th>値段</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="product : ${products}" th:object="${product}">
+											<td th:text="*{id}"></td>
+											<td th:text="*{name}"></td>
+											<td th:text="*{genre}"></td>
+											<td th:text="*{setPriceEn()}"></td>
+											<td>
+												<a th:href="@{/product/edit/{id}(id=*{id})}" class="btn btn-warning btn-icon-split">
+													<span class="icon text-white-50">
+														<i class="fas fa-exchange-alt"></i>
+													</span>
+													<span class="text">編集</span>
+												</a>
+
+												<a th:href="@{/product/delete/{id}(id=*{id})}" class="btn btn-danger btn-icon-split">
+													<span class="icon text-white-50">
+														<i class="fas fa-trash"></i>
+													</span>
+													<span class="text">削除</span>
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<th:block th:insert="fragments/base :: scripts"></th:block>
 	</div>
 </body>
 </html>
