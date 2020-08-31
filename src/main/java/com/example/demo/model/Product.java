@@ -26,6 +26,10 @@ public class Product {
 	@Size(max = 40)
 	private String name;
 	
+	@NotBlank
+	@Size(max = 40)
+	private String genre;
+	
 	@Range(max = 500000)
 	private Long price;
 	
