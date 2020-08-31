@@ -25,4 +25,4 @@ http://localhost:8080/
 ==============================
 ![main](img/image5.png)
 ==============================
-![main](img/image6.png)
+![main](img/image7.png)

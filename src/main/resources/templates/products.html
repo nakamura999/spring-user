@@ -21,7 +21,7 @@
 								<div th:if="${products.size() == 0}">
 									商品を登録してください
 								</div>
-								<table class="table table-bordered text-white" th:if="${products.size() > 0}">
+								<table id="user-table" class="table table-bordered text-white" th:if="${products.size() > 0}">
 									<thead>
 										<tr>
 											<th>ID</th>
@@ -63,6 +63,6 @@
 		</div>
 	</div>
 	<th:block th:insert="fragments/base :: scripts"></th:block>
-	</div>
+	<script th:src="@{/js/usertables.js}"></script>
 </body>
 </html>
