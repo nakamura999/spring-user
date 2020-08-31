@@ -36,7 +36,7 @@ public class ProductController {
 			return "proform";
 		}
 		repository.save(product);
-		return "redirect:/";
+		return "redirect:/product/list";
 	}
 	
 	@GetMapping("/product/edit/{id}")
@@ -48,6 +48,6 @@ public class ProductController {
 	@GetMapping("/product/delete/{id}")
 	public String deleteProduct(@PathVariable Long id) {
 		repository.deleteById(id);
-		return "redirect:/";
+		return "redirect:/product/list";
 	}
 }
