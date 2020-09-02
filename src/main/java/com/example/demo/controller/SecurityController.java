@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.SiteUser;
 import com.example.demo.repository.SiteUserRepository;
@@ -34,8 +35,17 @@ public class SecurityController {
 		// Authentication 認証済みのユーザー情報を取得する
 		model.addAttribute("username", loginUser.getName());
 		model.addAttribute("role", loginUser.getAuthorities());
-//		model.addAttribute("id", loginUser.);
 		return "user";
+	}
+	
+	@RequestMapping("/show")
+	public String showuser(Authentication loginUser, Model model) {
+		SiteUser siteUser = (SiteUser)loginUser.getPrincipal();
+		model.addAttribute("id", siteUser.getId());
+		model.addAttribute("username", siteUser.getUsername());
+		model.addAttribute("email", siteUser.getEmail());
+		return "show";
+		
 	}
 	
 	@GetMapping("/admin/list")
