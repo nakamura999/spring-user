@@ -19,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.demo.model.SiteUser;
 import com.example.demo.repository.SiteUserRepository;
+import com.example.demo.service.LoginUserDetails;
 import com.example.demo.util.Role;
 
 import lombok.RequiredArgsConstructor;
@@ -44,17 +45,17 @@ public class SecurityController {
 	}
 	
 	@RequestMapping("/show")
-	public String showUser(ModelMap model) {
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String username = ((UserDetails)principal).getUsername();
+//	public String showUser(ModelMap model) {
+//		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		String username = ((UserDetails)principal).getUsername();
 //		Long id = ((UserDetails)principal).getId();
-		model.addAttribute("username", username);
+//		model.addAttribute("username", username);
 //		model.addAttribute("id", id);
-//	public String showUser(Authentication loginUser, Model model) {
-//		SiteUser siteUser = (SiteUser)loginUser.getPrincipal();
-//		model.addAttribute("id", siteUser.getId());
-//		model.addAttribute("username", siteUser.getUsername());
-//		model.addAttribute("email", siteUser.getEmail());
+	public String showUser(Authentication loginUser, Model model) {
+		LoginUserDetails siteUser = (LoginUserDetails)loginUser.getPrincipal();
+		model.addAttribute("id", siteUser.getId());
+		model.addAttribute("username", siteUser.getUsername());
+//		model.addAttribute("email", siteUser.getSiteUser());
 		return "show";
 		
 	}

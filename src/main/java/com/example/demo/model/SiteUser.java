@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
 import javax.persistence.OneToMany;
 
 import lombok.Getter;
@@ -39,4 +40,9 @@ public class SiteUser {
 	
 	@OneToMany(mappedBy = "siteuser")
 	private List<Product> products;
+
+	public boolean isEnabled() {
+		// TODO 自動生成されたメソッド・スタブ
+		return true;
+	}
 }

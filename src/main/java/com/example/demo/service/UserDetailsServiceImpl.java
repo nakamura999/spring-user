@@ -22,11 +22,17 @@ import lombok.RequiredArgsConstructor;
 public class UserDetailsServiceImpl implements UserDetailsService {
 	private final SiteUserRepository userRepository;
 	
+	public SiteUser findById(Long id) {
+		return userRepository.findById(id).get();
+	}
+	
 	// ↓ UserDetailsServiceインターフェースは、ユーザを特定するために使用され。このインターフェースには、実装が必要なloadUserByUsername()というメソッドがある。
 	// loadUserByUsername()メソッドの戻りつで、見つかったユーザーを返す
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		SiteUser user = userRepository.findByUsername(username);
+//		Long id = user.getId();
+//		SiteUser userid = userRepository.findById(id);
 		if (user == null) {
 			throw new UsernameNotFoundException(username + " not found");
 		}
