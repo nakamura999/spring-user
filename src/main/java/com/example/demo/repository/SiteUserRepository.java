@@ -7,5 +7,5 @@ import com.example.demo.model.SiteUser;
 public interface SiteUserRepository extends JpaRepository<SiteUser, Long> {
 	SiteUser findByUsername(String username);
 	boolean existsByUsername(String username);
-	SiteUser findById(SiteUser id);
+//	SiteUser findById(SiteUser id);
 }

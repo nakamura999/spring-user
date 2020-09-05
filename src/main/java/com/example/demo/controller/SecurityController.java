@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
+import java.security.Principal;
+
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,13 +22,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.demo.model.SiteUser;
 import com.example.demo.repository.SiteUserRepository;
-import com.example.demo.service.LoginUserDetails;
 import com.example.demo.util.Role;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RequiredArgsConstructor
 @Controller
+@Slf4j
 public class SecurityController {
 	
 	private final SiteUserRepository userRepository;
@@ -44,7 +48,16 @@ public class SecurityController {
 		return "user";
 	}
 	
-	@RequestMapping("/show")
+	@GetMapping("/show")
+//	public String showUser(Model model, Principal principal) {
+//		Authentication authentication = (Authentication)principal;
+//		LoginUserDetails user = (LoginUserDetails)authentication.getPrincipal();
+//		log.info("user:" + user.toString());
+//		LoginUserDetails user2 = (LoginUserDetails)SecurityContextHolder
+//				.getContext()
+//				.getAuthentication()
+//				.getPrincipal();
+//		log.info("user2:"+user2.toString());
 //	public String showUser(ModelMap model) {
 //		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //		String username = ((UserDetails)principal).getUsername();
@@ -52,8 +65,8 @@ public class SecurityController {
 //		model.addAttribute("username", username);
 //		model.addAttribute("id", id);
 	public String showUser(Authentication loginUser, Model model) {
-		LoginUserDetails siteUser = (LoginUserDetails)loginUser.getPrincipal();
-		model.addAttribute("id", siteUser.getId());
+		UserDetails siteUser = (UserDetails)loginUser.getPrincipal();
+		log.info(siteUser.toString());
 		model.addAttribute("username", siteUser.getUsername());
 //		model.addAttribute("email", siteUser.getSiteUser());
 		return "show";
