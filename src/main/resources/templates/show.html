@@ -23,12 +23,14 @@
 											<th>ログインユーザー名</th>
 											<th></th>
 											<th></th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td th:text="${username}"></td>
-											<td sec:authentication="principal.siteuser"></td>
+											<td th:text="${user}"></td>
+											<td sec:authentication="principal"></td>
 											<td>
  												<a th:href="@{/edit/{id}(id=*{id})}" class="btn btn-warning btn-icon-split">
 													<span class="icon text-white-50">

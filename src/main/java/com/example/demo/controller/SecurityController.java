@@ -67,6 +67,8 @@ public class SecurityController {
 	public String showUser(Authentication loginUser, Model model) {
 		UserDetails siteUser = (UserDetails)loginUser.getPrincipal();
 		log.info(siteUser.toString());
+		siteUser.toString();
+		model.addAttribute("user", siteUser.getClass());
 		model.addAttribute("username", siteUser.getUsername());
 //		model.addAttribute("email", siteUser.getSiteUser());
 		return "show";
