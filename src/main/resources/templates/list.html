@@ -25,6 +25,7 @@
 											<th>Email</th>
 											<th>性別</th>
 											<th>権限</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -34,6 +35,14 @@
 											<td th:text="*{email}"></td>
 											<td th:text="${T(com.example.demo.util.Type).GENDERS.get(user.gender)}"></td>
 											<td th:text="*{role}"></td>
+											<td>
+												<a th:href="@{/edit/{id}(id=*{id})}" class="btn btn-warning btn-icon-split">
+													<span class="icon text-white-50">
+														<i class="fas fa-exchange-alt"></i>
+													</span>
+													<span class="text">編集</span>
+												</a>
+											</td>
 										</tr>
 									</tbody>
 								</table>
