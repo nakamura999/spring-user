@@ -20,6 +20,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.example.demo.model.Product;
 import com.example.demo.model.SiteUser;
 import com.example.demo.repository.SiteUserRepository;
 import com.example.demo.util.Role;
@@ -108,10 +109,19 @@ public class SecurityController {
 		return "edituser";
 	}
 	
+	@PostMapping("/userupdate")
+	public String userupdate(@Validated @ModelAttribute("user") SiteUser user, BindingResult result) {
+		if (result.hasErrors()) {
+			return "edituser";
+		}
+		userRepository.save(user);
+		return "list";
+	}
+	
 	@GetMapping("/delete/{id}")
 	public String deleteSiteUser(@PathVariable Long id) {
 		userRepository.deleteById(id);
-		return "redirect:/";
+		return "redirect:/admin/list";
 	}
 
 }
