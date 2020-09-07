@@ -114,8 +114,13 @@ public class SecurityController {
 		if (result.hasErrors()) {
 			return "edituser";
 		}
+		if (user.isAdmin()) {
+			user.setRole(Role.ADMIN.name());
+		} else {
+			user.setRole(Role.USER.name());
+		}
 		userRepository.save(user);
-		return "list";
+		return "redirect:/admin/list";
 	}
 	
 	@GetMapping("/delete/{id}")
