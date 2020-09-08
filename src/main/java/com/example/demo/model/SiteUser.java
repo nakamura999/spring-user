@@ -19,6 +19,8 @@ import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
+import com.example.demo.validator.LoginSt;
+
 @Getter
 @Setter
 @Entity
@@ -33,6 +35,7 @@ public class SiteUser implements UserDetails {
 	private Long id;
 	
 	@Size(min = 2, max=20)
+	@LoginSt // 自作バリデーション追加
 	private String username;
 	
 	@Size(min = 4, max = 255)
