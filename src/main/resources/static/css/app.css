@@ -30,6 +30,14 @@
 	width: 100%;
 }
 
+.edit-visual {
+	background: url(/images/image7.jpeg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+}
+
 .visual-box {
 	background-color: black;
 }

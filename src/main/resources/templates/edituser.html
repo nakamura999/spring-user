@@ -11,24 +11,24 @@
 				<div class="card o-hidden border-0 shadow-lg my-5">
 					<div class="card-body p-0">
 						<div class="row">
-							<div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+							<div class="col-lg-6 d-none d-lg-block edit-visual"></div>
 							<div class="col-lg-6">
 								<div class="p-5">
 									<div class="text-center">
-										<h1 class="h4 text-white mb-4 main-text shadow">ユーザー登録</h1>
+										<h1 class="h4 text-white mb-4 main-text shadow">ユーザー編集（編集中）</h1>
 									</div>
 
 									<form th:action="@{/userupdate}" th:object="${user}" method="post">
 										<div class="form-group">
 											<label for="name">
-												<span class="badge badge-danger">必須</span>ユーザー名
+												<span class="badge badge-danger"></span>ユーザー名
 											</label>
 											<input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{username}">
 											<div class="invalid-feedback" th:errors="*{username}"></div>
 										</div>
 										<div class="form-group">
 											<label for="email">
-												<span class="badge badge-danger">必須</span>メールアドレス
+												<span class="badge badge-danger"></span>メールアドレス
 											</label>
 											<input type="email" class="form-control" th:errorclass="is-invalid" th:field="*{email}">
 											<div class="invalid-feedback" th:errors="*{email}"></div>
@@ -47,7 +47,7 @@
 											<!-- 繰り返し処理でid属性を使うためのメソッド inputタグのidとlabelタグのforを紐付けたい場合に使用 -->
 										</div>
 
-										<button class="btn btn-success btn-user bth-block border-secondary">登録</button>
+										<button class="btn btn-success btn-user bth-block border-secondary">更新</button>
 									</form>
 
 								</div>
