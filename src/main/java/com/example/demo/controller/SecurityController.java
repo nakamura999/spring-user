@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.PutMapping;
 // 追加
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -105,7 +105,7 @@ public class SecurityController {
 		return "edituser";
 	}
 	
-	@PostMapping("/userupdate")
+	@PutMapping("/userupdate")
 	public String userupdate(@Validated @ModelAttribute("user") SiteUser user, BindingResult result) {
 		if (result.hasErrors()) {
 			return "edituser";
