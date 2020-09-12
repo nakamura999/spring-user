@@ -8,10 +8,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.example.demo.model.SiteUser;
 
 public class LoginUserDetails implements UserDetails {
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -2312397170822341238L;
 	public SiteUser siteuser;
 	private Collection<GrantedAuthority> authorities;
 	
