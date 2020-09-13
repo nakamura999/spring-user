@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,11 +17,6 @@ public class LoginUserDetails implements UserDetails {
 	private static final long serialVersionUID = -2312397170822341238L;
 	public SiteUser siteuser;
 	private Collection<GrantedAuthority> authorities;
-	
-	public LoginUserDetails(SiteUser siteuser,Collection<GrantedAuthority> authorities){
-		this.siteuser = siteuser;
-		this.authorities = authorities;		
-	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -61,10 +58,6 @@ public class LoginUserDetails implements UserDetails {
 	public boolean isEnabled() {
 		// TODO 自動生成されたメソッド・スタブ
 		return siteuser.isEnabled();
-	}
-
-	public SiteUser getSiteUser() {
-		return siteuser;
 	}
 
 }

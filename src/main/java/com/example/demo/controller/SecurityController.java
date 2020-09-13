@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 // 追加
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.example.demo.model.LoginUserDetails;
 import com.example.demo.model.SiteUser;
 import com.example.demo.repository.SiteUserRepository;
 import com.example.demo.util.Role;
@@ -62,10 +63,10 @@ public class SecurityController {
 //		model.addAttribute("username", username);
 //		model.addAttribute("id", id);
 	public String showUser(Authentication loginUser, Model model) {
-		UserDetails siteUser = (UserDetails)loginUser.getPrincipal();
+		LoginUserDetails siteUser = (LoginUserDetails)loginUser.getPrincipal();
 		log.info(siteUser.toString());
 		siteUser.toString();
-		model.addAttribute("user", siteUser.getClass());
+		model.addAttribute("user", siteUser.getSiteUser());
 		model.addAttribute("username", siteUser.getUsername());
 //		model.addAttribute("email", siteUser.getSiteUser());
 		return "show";

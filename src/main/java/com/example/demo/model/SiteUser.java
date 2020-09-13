@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -61,12 +62,6 @@ public class SiteUser implements UserDetails {
 	}
 
 	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	@Override
 	public boolean isAccountNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ
 		return true;
@@ -83,4 +78,33 @@ public class SiteUser implements UserDetails {
 		// TODO 自動生成されたメソッド・スタブ
 		return true;
 	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+	
+//	private Collection<GrantedAuthority> authorities;
+	
+//	public SiteUser(Long id, String username, String email, String password,
+//			Collection<? extends GrantedAuthority> authorities) {
+//		this.id = id;
+//		this.username = username;
+//		this.email = email;
+//		this.password = password;
+//		this.authorities = (Collection<GrantedAuthority>) authorities;
+//	}
+//	public static UserDetails build(SiteUser user) {
+//		List<GrantedAuthority> authorities = user.getRole()
+//				.map(role -> new SimpleGrantedAuthority(role.getName().name()))
+//				.collect(Collectors.toList());
+//
+//		return new SiteUser(
+//				user.getId(), 
+//				user.getUsername(), 
+//				user.getEmail(),
+//				user.getPassword(), 
+//				authorities);
+//	}
 }
